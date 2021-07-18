@@ -11,7 +11,7 @@ class DynamoAccessor:
         dynamo_db = boto3.resource('dynamodb')
         self.table = dynamo_db.Table(dynamo_table)
 
-    def get_data_from_dynamo(self, cc):
+    def get_data_from_dynamo(self, CEDULA):
         response = self.table.query(KeyConditionExpression=Key('CEDULA').eq(CEDULA))
         return response["Items"][0] if any(response["Items"]) else None
 
