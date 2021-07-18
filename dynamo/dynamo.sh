@@ -1,6 +1,6 @@
 #!/bin/bash
 aws cloudformation deploy \
---region us-east-1 \
---parameter-overrides DynamoName="lablambda" DynamoKey="dni" \
---stack-name dynamo-lambda-lab \
+--region us-east-2 \
+--parameter-overrides DynamoName="CIUDADANO-TABLA" DynamoKey="CEDULA" \
+--stack-name LAB-02-DYNAMO \
 --template-file ./dynamo.yml
